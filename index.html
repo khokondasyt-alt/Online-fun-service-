@@ -145,13 +145,12 @@ header {
 
 <script>
 function downloadAPK() {
-    const link = document.createElement('a');
-    link.href = 'https://github.com/khokondasyt-alt/Online-fun-service-/raw/main/onlinefunservice.apk';
-    link.download = 'OnlineFunService.apk';
-    link.target = "_self"; // নতুন tab খোলা বন্ধ
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const link = document.createElement('a');
+  link.href = 'https://github.com/khokondasyt-alt/Online-fun-service-/raw/main/onlinefunservice.apk';
+  link.download = 'OnlineFunService.apk';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
 </script>
 
