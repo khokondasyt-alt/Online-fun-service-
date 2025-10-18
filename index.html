@@ -14,14 +14,14 @@
 
     header {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      padding: 25px 40px;
+      padding: 15px 20px;
     }
 
     header h2 {
       margin: 0;
-      font-size: 45px;
+      font-size: 20px;
       color: #f5a3ff;
     }
 
@@ -31,6 +31,12 @@
       border: none;
       cursor: pointer;
       font-weight: bold;
+    }
+
+    .btn-login {
+      background: black;
+      color: white;
+      margin-right: 8px;
     }
 
     .btn-register {
@@ -110,22 +116,19 @@
   <!-- Header -->
 <header>
   <h2>❤️ Online Fun Service</h2>
+  <div>
+    <button class="btn btn-login" onclick="window.location.href='login.html'">Login</button>
+    <button class="btn btn-register" onclick="window.location.href='register.html'">Register</button>
+  </div>
 </header>
-
   <!-- Hero Section -->
   <section class="hero">
     <h1>Connect & Chat <br> Instantly</h1>
     <p>Premium video calling and chat service connecting you with verified models worldwide</p>
-
-    <div class="hero-buttons">
-      <!-- শুধুমাত্র Get Started (APK ডাউনলোড) বাটন -->
-      <a href="downloads/onlinefunservice.apk" 
-         class="btn btn-register" 
-         download>
-        Get Started
-      </a>
-    </div>
-
+<div class="hero-buttons">
+  <button class="btn btn-register" onclick="window.location.href='register.html'">Get Started</button>
+  <button class="btn btn-login" onclick="window.location.href='login.html'">Sign In</button>
+</div>
     <img src="src/hero.jpg" alt="Hero Image">
   </section>
 
