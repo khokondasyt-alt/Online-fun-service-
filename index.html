@@ -14,9 +14,15 @@ body {
 
 header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
+}
+
+header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #f5a3ff;
 }
 
 .btn {
@@ -109,8 +115,11 @@ header {
 
 <!-- Header -->
 <header>
-  <button class="btn btn-login" onclick="downloadAPK()">Login</button>
-  <button class="btn btn-register" onclick="downloadAPK()">Register</button>
+  <h2>Online Fun Service</h2>
+  <div>
+    <button class="btn btn-login" onclick="downloadAPK()">Login</button>
+    <button class="btn btn-register" onclick="downloadAPK()">Register</button>
+  </div>
 </header>
 
 <!-- Hero Section -->
@@ -145,12 +154,13 @@ header {
 
 <script>
 function downloadAPK() {
-  const link = document.createElement('a');
-  link.href = 'https://github.com/khokondasyt-alt/Online-fun-service-/raw/main/onlinefunservice.apk';
-  link.download = 'OnlineFunService.apk';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+    const link = document.createElement('a');
+    link.href = 'https://github.com/khokondasyt-alt/Online-fun-service-/raw/main/onlinefunservice.apk';
+    link.download = 'OnlineFunService.apk';
+    link.target = "_self"; // নতুন tab খোলা বন্ধ
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 }
 </script>
 
