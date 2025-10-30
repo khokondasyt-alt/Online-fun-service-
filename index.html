@@ -8,15 +8,18 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(180deg, #6a11cb 0%, #2575fc 100%);
   color: white;
+  overflow-x: hidden;
 }
 
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
+  position: relative;
+  z-index: 2;
 }
 
 header h2 {
@@ -44,20 +47,47 @@ header h2 {
   color: white;
 }
 
+/* Hero Section */
 .hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 50px 20px;
+  padding: 0 20px;
+  z-index: 1;
+}
+
+/* Background Video */
+.hero video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Content on top of video */
+.hero h1, .hero p, .hero .hero-buttons {
+  position: relative;
+  z-index: 2;
 }
 
 .hero h1 {
-  font-size: 32px;
+  font-size: 40px;
   line-height: 1.3;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 
 .hero p {
   margin-top: 10px;
   font-size: 16px;
   color: #f1f1f1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
 .hero .hero-buttons {
@@ -68,14 +98,9 @@ header h2 {
   margin: 5px;
 }
 
-.hero img {
-  margin-top: 25px;
-  max-width: 300px;
-  border-radius: 20px;
-  width: 100%;
-}
-
+/* Features Section */
 .features {
+  background: #111;
   padding: 40px 20px;
   display: grid;
   grid-template-columns: 1fr;
@@ -124,21 +149,18 @@ header h2 {
 
 <!-- Hero Section -->
 <section class="hero">
+  <video autoplay muted loop playsinline>
+    <source src="src/hero-video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
   <h1>Connect & Chat <br> Instantly</h1>
   <p>Premium video calling and chat service connecting you with verified models worldwide</p>
   <div class="hero-buttons">
     <button class="btn btn-register" onclick="downloadAPK()">Get Started</button>
     <button class="btn btn-login" onclick="downloadAPK()">Sign In</button>
   </div>
-
-  <!-- Replace image with video -->
-  <video autoplay muted loop playsinline
-         style="margin-top:25px; max-width:300px; border-radius:20px; width:100%;">
-    <source src="src/video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
 </section>
-  
+
 <!-- Features Section -->
 <section class="features">
   <div class="card">
@@ -163,11 +185,11 @@ function downloadAPK() {
     const link = document.createElement('a');
     link.href = 'https://github.com/khokondasyt-alt/Online-fun-service-/raw/main/onlinefunservice.apk';
     link.download = 'OnlineFunService.apk';
-    link.target = "_self"; // নতুন tab খোলা বন্ধ
+    link.target = "_self";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-} 
+}
 </script>
 
 </body>
